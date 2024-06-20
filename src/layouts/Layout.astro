@@ -18,23 +18,15 @@ import Footer from "@components/Footer.astro";
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="flex flex-col bg-neutral-100 min-h-screen">
     <Header />
-    <slot />
+    <main class="f flex-grow">
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>
 <style is:global>
-  :root {
-    --color-primary: #b7c428;
-    --color-secondary: #8c8c8c;
-    --color-tertiary: #232323;
-    --color-text: #e6e5e5;
-    --color-hover: #fff;
-    --color-background: #e9e9e9;
-    --color-background-secondary: #232323;
-  }
-
   *,
   *:before,
   *:after {
@@ -44,7 +36,6 @@ import Footer from "@components/Footer.astro";
   }
 
   body {
-    background-color: var(--color-background);
     font-family:
       system-ui,
       -apple-system,
@@ -57,6 +48,9 @@ import Footer from "@components/Footer.astro";
       "Open Sans",
       "Helvetica Neue",
       sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
 
   a {

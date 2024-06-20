@@ -1,24 +1,49 @@
 ---
-import Facebook from "@icons/Facebook.astro"
-import X from "@icons/X.astro"
-import Instagram from "@icons/Instagram.astro"
-import Linkedin from "@icons/Linkedin.astro"
-import Spotify from "@icons/Spotify.astro"
+import { Image } from "astro:assets";
+import Logo from "@public/nk.png";
+import Facebook from "@icons/Facebook.astro";
+import X from "@icons/X.astro";
+import Instagram from "@icons/Instagram.astro";
+import Linkedin from "@icons/Linkedin.astro";
+import Spotify from "@icons/Spotify.astro";
 ---
 
-<footer>
-  <div class="container">
-    <Facebook />
-    <Instagram />
-    <Linkedin />
-    <Spotify />
-    <X />
+<footer class="w-screen flex justify-center py-8 bg-neutral-900 text-neutral-200">
+  <div
+    class="flex justify-between max-w-[80%] w-full lg:flex-row max-sm:flex-col"
+  >
+    <div class="w-2/5 flex gap-4 flex-col max-sm:w-full max-sm:text-xs max-sm:items-center max-sm:text-justify ">
+      <div class="footer-logo">
+        <a href="/">
+          <Image
+            src={Logo}
+            alt="Niuko Consultores"
+            loading="lazy"
+            width={100}
+          />
+        </a>
+      </div>
+      <div class="footer-text">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+          pellentesque, nunc vel fringilla tincidunt, est nunc posuere ex, nec
+          ultricies purus nunc nec nunc.
+        </p>
+      </div>
+    </div>
+    <div class="flex flex-col justify-center items-center">
+      <div class="flex gap-4 py-4 max-sm:text-xs">
+        <a href="#">Nuestras oficinas</a>
+        <a href="#">Contáctenos</a>
+        <a href="#">Aviso legal y privacidad</a>
+      </div>
+      <div class="flex gap-4">
+        <Facebook />
+        <Instagram />
+        <Linkedin />
+        <Spotify />
+        <X />
+      </div>
+    </div>
   </div>
 </footer>
-
-<style>
-  footer {
-    background-color: var(--color-background-secondary);
-    color: var(--color-text);
-  }
-</style>
