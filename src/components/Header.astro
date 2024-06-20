@@ -1,0 +1,118 @@
+---
+import { Image } from "astro:assets";
+import Logo from "@public/nk.png";
+import Phone from "@icons/Phone.astro";
+import Glob from "@icons/Glob.astro";
+import Arrow from "@icons/Arrow.astro";
+---
+
+<header>
+  <div class="container">
+    <div class="links">
+      <a href="/">
+        <Image src={Logo} alt="Niuko Consultores" loading="lazy" width={50} />
+      </a>
+      <nav>
+        <a href="#">Servicios</a>
+        <a href="#">Acerca de nosotros</a>
+        <a href="#">Carrera</a>
+        <a href="#">Cursos</a>
+        <a href="#">Blog</a>
+      </nav>
+    </div>
+    <div class="contact">
+      <button>
+        <Glob />
+      </button>
+      <a href="/contact-us">
+        <Phone />
+      </a>
+    </div>
+  </div>
+</header>
+
+<style>
+  header {
+    height: 70px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    background: var(--color-background-secondary);
+    color: var(--color-text);
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .links {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .links nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 5px;
+    margin: auto;
+  }
+
+  .links nav a {
+    position: relative;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    padding: 0 10px;
+  }
+
+  .links nav a:after {
+    content: "";
+    position: absolute;
+    background-color: var(--color-primary);
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+  }
+
+  .links nav a:hover {
+    color: var(--color-hover);
+  }
+
+  .links nav a:hover:after {
+    width: 100%;
+  }
+
+  .contact {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .contact button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .contact a, .contact button {
+    color: var(--color-text);
+    transition: all 0.5s ease;
+  }
+
+  .contact a:hover, .contact button:hover{
+    color: var(--color-primary);
+    transition: all 0.5s ease;
+  }
+</style>
